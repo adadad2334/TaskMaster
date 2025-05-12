@@ -28,25 +28,17 @@
 - Система аутентификации и авторизации с JWT токенами
 - Эндпоинты для CRUD-операций со всеми сущностями
 - Алгоритм оптимального назначения задач на основе Венгерского алгоритма
-- Тесты с покрытием более 70%
 - Докеризация приложения
 
-### Fixed
-- Database connection issues in test fixtures by properly creating tables in memory
-- Authentication by updating the auth_headers fixture to use tokens from the login endpoint
-- Model references by replacing incorrect ProjectUser and UserSkill class references with direct statements for association tables
-- Added missing functions to crud.py including get_user_skills and get_task_skills
-- Fixed test cases to use correct enum values (lowercase "todo", "medium" instead of uppercase)
-- Improved test coverage by adding direct CRUD tests for various operations
-- Fixed the assign.py module to properly handle task assignments with required skills
-- Updated schemas to include required fields like assignee_username
-- Fixed user registration to properly check for duplicate usernames and emails
-- Improved error handling in API endpoints
-- Updated router permissions to allow skill modifications for testing
-- Fixed the root endpoint message to match test expectations
-
-### Achievements
-- Test coverage improved from 56% to 71% for the overall project
-- crud.py reached 89% coverage, exceeding the 70% threshold requirement
-- All 74 tests now pass successfully
-- API works correctly for user registration, authentication, project creation, task management, and task assignment 
+### Исправлено
+- Проблемы с подключением к базе данных в тестовых фикстурах
+- Аутентификация в тестах
+- Ссылки на модели, заменив некорректные ссылки на классы ProjectUser и UserSkill
+- Добавлены недостающие функции в crud.py
+- Исправлены тестовые примеры для корректного использования значений перечислений
+- Исправлен модуль assign.py для правильной обработки назначения задач
+- Обновлены схемы данных для включения необходимых полей
+- Исправлена регистрация пользователей для проверки дублирующихся имен и email
+- Улучшена обработка ошибок в API эндпоинтах
+- Обновлены разрешения роутеров для тестирования
+- Исправлено сообщение корневого эндпоинта 
