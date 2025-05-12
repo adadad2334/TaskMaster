@@ -70,90 +70,115 @@ app/assign.py:378:0: C0303: Trailing whitespace (trailing-whitespace)
 app/assign.py:380:0: C0303: Trailing whitespace (trailing-whitespace)
 app/assign.py:388:0: C0303: Trailing whitespace (trailing-whitespace)
 app/assign.py:392:0: C0301: Line too long (113/100) (line-too-long)
-app/assign.py:399:0: C0303: Trailing whitespace (trailing-whitespace)
-app/assign.py:406:0: C0304: Final newline missing (missing-final-newline)
+app/assign.py:408:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:415:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:426:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:433:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:438:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:442:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:447:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:460:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:469:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:473:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:476:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:479:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:488:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:492:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:500:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:504:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:507:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:514:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:516:0: C0303: Trailing whitespace (trailing-whitespace)
+app/assign.py:520:0: C0304: Final newline missing (missing-final-newline)
 app/assign.py:68:4: R0914: Too many local variables (16/15) (too-many-locals)
 app/assign.py:140:4: R0914: Too many local variables (17/15) (too-many-locals)
 app/assign.py:202:4: R0912: Too many branches (22/12) (too-many-branches)
 app/assign.py:282:4: R0912: Too many branches (15/12) (too-many-branches)
+app/assign.py:435:4: R1702: Too many nested blocks (7/5) (too-many-nested-blocks)
+app/assign.py:435:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
+app/assign.py:392:0: R0912: Too many branches (19/12) (too-many-branches)
 app/assign.py:7:0: W0611: Unused Dict imported from typing (unused-import)
 ************* Module app.auth
-app/auth.py:139:0: C0301: Line too long (103/100) (line-too-long)
-app/auth.py:158:0: C0303: Trailing whitespace (trailing-whitespace)
-app/auth.py:176:0: C0304: Final newline missing (missing-final-newline)
-app/auth.py:133:8: W0707: Consider explicitly re-raising using 'except JWTError as exc' and 'raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Could not validate credentials', headers={'WWW-Authenticate': 'Bearer'}) from exc' (raise-missing-from)
+app/auth.py:102:0: C0303: Trailing whitespace (trailing-whitespace)
+app/auth.py:107:0: C0303: Trailing whitespace (trailing-whitespace)
+app/auth.py:143:0: C0301: Line too long (103/100) (line-too-long)
+app/auth.py:162:0: C0303: Trailing whitespace (trailing-whitespace)
+app/auth.py:180:0: C0304: Final newline missing (missing-final-newline)
+app/auth.py:137:8: W0707: Consider explicitly re-raising using 'except JWTError as exc' and 'raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Could not validate credentials', headers={'WWW-Authenticate': 'Bearer'}) from exc' (raise-missing-from)
 app/auth.py:14:0: C0411: standard import "os" should be placed before third party imports "jose.JWTError", "passlib.context.CryptContext", "fastapi.Depends", "fastapi.security.OAuth2PasswordBearer", "sqlalchemy.orm.Session" (wrong-import-order)
+app/auth.py:16:0: W0611: Unused PyJWTError imported from jwt.exceptions (unused-import)
 ************* Module app.crud
-app/crud.py:51:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:57:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:99:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:102:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:110:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:81:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:87:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:129:0: C0303: Trailing whitespace (trailing-whitespace)
 app/crud.py:132:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:139:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:142:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:152:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:163:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:166:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:174:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:140:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:162:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:169:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:172:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:182:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:193:0: C0303: Trailing whitespace (trailing-whitespace)
 app/crud.py:196:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:206:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:209:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:219:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:248:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:265:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:268:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:276:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:284:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:286:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:292:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:204:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:226:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:236:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:239:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:249:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:278:0: C0303: Trailing whitespace (trailing-whitespace)
 app/crud.py:295:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:305:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:317:0: C0301: Line too long (109/100) (line-too-long)
-app/crud.py:320:0: C0301: Line too long (107/100) (line-too-long)
-app/crud.py:328:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:342:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:355:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:359:0: C0301: Line too long (103/100) (line-too-long)
-app/crud.py:361:0: C0301: Line too long (113/100) (line-too-long)
-app/crud.py:362:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:364:0: C0301: Line too long (109/100) (line-too-long)
-app/crud.py:367:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:375:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:387:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:399:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:402:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:406:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:419:0: C0301: Line too long (103/100) (line-too-long)
-app/crud.py:420:0: C0303: Trailing whitespace (trailing-whitespace)
-app/crud.py:429:0: C0304: Final newline missing (missing-final-newline)
+app/crud.py:298:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:306:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:314:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:316:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:322:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:325:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:335:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:347:0: C0301: Line too long (109/100) (line-too-long)
+app/crud.py:350:0: C0301: Line too long (107/100) (line-too-long)
+app/crud.py:358:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:372:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:385:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:389:0: C0301: Line too long (103/100) (line-too-long)
+app/crud.py:391:0: C0301: Line too long (113/100) (line-too-long)
+app/crud.py:392:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:394:0: C0301: Line too long (109/100) (line-too-long)
+app/crud.py:397:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:405:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:417:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:429:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:432:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:436:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:449:0: C0301: Line too long (103/100) (line-too-long)
+app/crud.py:450:0: C0303: Trailing whitespace (trailing-whitespace)
+app/crud.py:483:0: C0304: Final newline missing (missing-final-newline)
 app/crud.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 app/crud.py:9:0: W0105: String statement has no effect (pointless-string-statement)
-app/crud.py:45:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:62:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:74:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:77:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:80:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:87:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:96:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:136:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:224:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:227:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:230:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:233:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:240:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:253:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:262:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:289:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:310:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:313:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:316:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:92:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:101:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:104:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:107:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:110:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:117:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:126:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:166:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:254:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:257:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:260:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:263:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:270:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:283:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:292:0: C0116: Missing function or method docstring (missing-function-docstring)
 app/crud.py:319:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/crud.py:322:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:340:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:343:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:346:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:349:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/crud.py:352:0: C0116: Missing function or method docstring (missing-function-docstring)
 app/crud.py:1:0: W0611: Unused List imported from typing (unused-import)
-app/crud.py:1:0: W0611: Unused Optional imported from typing (unused-import)
 ************* Module app.database
 app/database.py:42:0: C0304: Final newline missing (missing-final-newline)
 ************* Module app.main
@@ -171,7 +196,8 @@ app/models.py:128:0: R0903: Too few public methods (0/2) (too-few-public-methods
 app/models.py:10:0: C0411: standard import "datetime.datetime" should be placed before third party imports "sqlalchemy.Boolean", "sqlalchemy.orm.relationship" (wrong-import-order)
 app/models.py:11:0: C0411: standard import "enum" should be placed before third party imports "sqlalchemy.Boolean", "sqlalchemy.orm.relationship" (wrong-import-order)
 ************* Module app.schemas
-app/schemas.py:137:0: C0304: Final newline missing (missing-final-newline)
+app/schemas.py:142:0: C0303: Trailing whitespace (trailing-whitespace)
+app/schemas.py:144:0: C0304: Final newline missing (missing-final-newline)
 app/schemas.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 app/schemas.py:7:0: C0115: Missing class docstring (missing-class-docstring)
 app/schemas.py:11:0: C0115: Missing class docstring (missing-class-docstring)
@@ -206,109 +232,125 @@ app/schemas.py:121:4: R0903: Too few public methods (0/2) (too-few-public-method
 app/schemas.py:125:0: C0115: Missing class docstring (missing-class-docstring)
 app/schemas.py:129:0: C0115: Missing class docstring (missing-class-docstring)
 app/schemas.py:135:0: C0115: Missing class docstring (missing-class-docstring)
+app/schemas.py:139:0: C0115: Missing class docstring (missing-class-docstring)
+app/schemas.py:143:4: C0115: Missing class docstring (missing-class-docstring)
+app/schemas.py:143:4: R0903: Too few public methods (0/2) (too-few-public-methods)
 app/schemas.py:2:0: C0411: standard import "typing.List" should be placed before third party import "pydantic.BaseModel" (wrong-import-order)
 app/schemas.py:3:0: C0411: standard import "datetime.datetime" should be placed before third party import "pydantic.BaseModel" (wrong-import-order)
 ************* Module app.routers.assign
-app/routers/assign.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/assign.py:42:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/assign.py:47:0: C0304: Final newline missing (missing-final-newline)
+app/routers/assign.py:36:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/assign.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/assign.py:48:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/assign.py:53:0: C0304: Final newline missing (missing-final-newline)
+app/routers/assign.py:20:0: W0127: Assigning the same variable 'assign_tasks' to itself (self-assigning-variable)
 ************* Module app.routers.projects
-app/routers/projects.py:18:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:46:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:63:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:74:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:77:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:23:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:26:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:51:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:65:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:68:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:79:0: C0303: Trailing whitespace (trailing-whitespace)
 app/routers/projects.py:82:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:86:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:96:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:99:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:103:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:107:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/projects.py:108:0: C0304: Final newline missing (missing-final-newline)
-app/routers/projects.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/routers/projects.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/projects.py:26:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/projects.py:27:17: W0613: Unused argument 'current_user' (unused-argument)
-app/routers/projects.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/projects.py:33:16: W0613: Unused argument 'current_user' (unused-argument)
-app/routers/projects.py:40:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/projects.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/projects.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/projects.py:90:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/projects.py:3:0: C0411: standard import "typing.List" should be placed before third party imports "fastapi.APIRouter", "sqlalchemy.orm.Session" (wrong-import-order)
+app/routers/projects.py:87:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:91:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:101:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:104:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:108:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:112:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/projects.py:113:0: C0304: Final newline missing (missing-final-newline)
+app/routers/projects.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/projects.py:31:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/projects.py:32:17: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/projects.py:37:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/projects.py:38:16: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/projects.py:45:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/projects.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/projects.py:73:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/projects.py:95:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/projects.py:7:0: C0411: standard import "typing.List" should be placed before third party imports "fastapi.APIRouter", "sqlalchemy.orm.Session" (wrong-import-order)
 ************* Module app.routers.skills
-app/routers/skills.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/skills.py:45:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/skills.py:47:0: C0304: Final newline missing (missing-final-newline)
-app/routers/skills.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/routers/skills.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/skills.py:16:16: W0613: Unused argument 'current_user' (unused-argument)
-app/routers/skills.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/skills.py:26:15: W0613: Unused argument 'current_user' (unused-argument)
-app/routers/skills.py:31:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/skills.py:32:14: W0613: Unused argument 'current_user' (unused-argument)
-app/routers/skills.py:39:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/skills.py:40:16: W0613: Unused argument 'current_user' (unused-argument)
-app/routers/skills.py:3:0: C0411: standard import "typing.List" should be placed before third party imports "fastapi.APIRouter", "sqlalchemy.orm.Session" (wrong-import-order)
+app/routers/skills.py:26:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/skills.py:50:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/skills.py:67:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/skills.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/skills.py:74:0: C0304: Final newline missing (missing-final-newline)
+app/routers/skills.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/skills.py:21:16: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/skills.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/skills.py:31:15: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/skills.py:36:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/skills.py:37:14: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/skills.py:44:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/skills.py:45:16: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/skills.py:59:4: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/skills.py:7:0: C0411: standard import "typing.List" should be placed before third party imports "fastapi.APIRouter", "sqlalchemy.orm.Session" (wrong-import-order)
 ************* Module app.routers.tasks
-app/routers/tasks.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:24:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:29:71: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:37:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:52:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:68:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:26:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:29:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:34:71: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:42:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:45:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:57:0: C0303: Trailing whitespace (trailing-whitespace)
 app/routers/tasks.py:73:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:83:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:78:0: C0303: Trailing whitespace (trailing-whitespace)
 app/routers/tasks.py:88:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:99:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:93:0: C0303: Trailing whitespace (trailing-whitespace)
 app/routers/tasks.py:104:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/tasks.py:107:0: C0304: Final newline missing (missing-final-newline)
-app/routers/tasks.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/routers/tasks.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/tasks.py:29:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/tasks.py:56:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/tasks.py:63:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/tasks.py:77:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/tasks.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/tasks.py:3:0: C0411: standard import "typing.List" should be placed before third party imports "fastapi.APIRouter", "sqlalchemy.orm.Session" (wrong-import-order)
+app/routers/tasks.py:109:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/tasks.py:112:0: C0304: Final newline missing (missing-final-newline)
+app/routers/tasks.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/tasks.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/tasks.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/tasks.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/tasks.py:82:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/tasks.py:98:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/tasks.py:7:0: C0411: standard import "typing.List" should be placed before third party imports "fastapi.APIRouter", "sqlalchemy.orm.Session" (wrong-import-order)
+app/routers/tasks.py:7:0: W0611: Unused Optional imported from typing (unused-import)
 ************* Module app.routers.users
-app/routers/users.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/users.py:25:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/users.py:29:0: C0301: Line too long (114/100) (line-too-long)
-app/routers/users.py:37:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/users.py:43:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/users.py:70:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/users.py:82:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/users.py:94:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/users.py:98:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/users.py:110:0: C0303: Trailing whitespace (trailing-whitespace)
-app/routers/users.py:114:0: C0304: Final newline missing (missing-final-newline)
+app/routers/users.py:23:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:38:0: C0301: Line too long (114/100) (line-too-long)
+app/routers/users.py:46:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:81:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:85:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:101:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:104:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:121:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:126:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:129:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:134:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:155:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:158:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:163:0: C0303: Trailing whitespace (trailing-whitespace)
+app/routers/users.py:164:0: C0304: Final newline missing (missing-final-newline)
 app/routers/users.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/routers/users.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/users.py:29:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/users.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/users.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/users.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
 app/routers/users.py:51:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/users.py:52:15: W0613: Unused argument 'current_user' (unused-argument)
-app/routers/users.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/users.py:58:14: W0613: Unused argument 'current_user' (unused-argument)
-app/routers/users.py:65:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/users.py:77:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/users.py:89:0: C0116: Missing function or method docstring (missing-function-docstring)
-app/routers/users.py:105:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/users.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/users.py:56:15: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/users.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
+app/routers/users.py:62:14: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/users.py:73:4: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/users.py:93:4: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/users.py:112:4: W0613: Unused argument 'current_user' (unused-argument)
+app/routers/users.py:141:4: W0613: Unused argument 'current_user' (unused-argument)
 app/routers/users.py:4:0: C0411: standard import "typing.List" should be placed before third party imports "fastapi.APIRouter", "fastapi.security.OAuth2PasswordRequestForm", "sqlalchemy.orm.Session" (wrong-import-order)
 app/routers/users.py:5:0: C0411: standard import "datetime.timedelta" should be placed before third party imports "fastapi.APIRouter", "fastapi.security.OAuth2PasswordRequestForm", "sqlalchemy.orm.Session" (wrong-import-order)
+app/routers/users.py:5:0: W0611: Unused timedelta imported from datetime (unused-import)
+app/routers/users.py:7:0: W0611: Unused import auth (unused-import)
+app/routers/users.py:9:0: W0611: Unused get_password_hash imported from auth (unused-import)
 ************* Module app.routers.__init__
 app/routers/__init__.py:1:0: C0304: Final newline missing (missing-final-newline)
 
 
 Report
 ======
-904 statements analysed.
+986 statements analysed.
 
 Statistics by type
 ------------------
@@ -316,13 +358,13 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |type     |number |old number |difference |%documented |%badname |
 +=========+=======+===========+===========+============+=========+
-|module   |14     |14         |=          |57.14       |0.00     |
+|module   |14     |14         |=          |78.57       |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|class    |35     |35         |=          |20.00       |0.00     |
+|class    |37     |35         |+2.00      |18.92       |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 |method   |8      |8          |=          |100.00      |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
-|function |72     |72         |=          |33.33       |0.00     |
+|function |75     |67         |+8.00      |41.33       |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 
 
@@ -345,6 +387,8 @@ External dependencies
       \-security (app.auth,app.routers.users)
     jose (app.auth)
       \-jwt (app.auth)
+    jwt 
+      \-exceptions (app.auth)
     passlib 
       \-context (app.auth)
     pydantic (app.schemas)
@@ -355,7 +399,7 @@ External dependencies
 
 
 
-1845 lines have been analyzed
+2117 lines have been analyzed
 
 Raw metrics
 -----------
@@ -363,13 +407,13 @@ Raw metrics
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |1179   |63.90 |1179     |=          |
+|code      |1298   |61.31 |1129     |+169.00    |
 +----------+-------+------+---------+-----------+
-|docstring |228    |12.36 |228      |=          |
+|docstring |296    |13.98 |183      |+113.00    |
 +----------+-------+------+---------+-----------+
-|comment   |134    |7.26  |134      |=          |
+|comment   |178    |8.41  |140      |+38.00     |
 +----------+-------+------+---------+-----------+
-|empty     |304    |16.48 |304      |=          |
+|empty     |345    |16.30 |291      |+54.00     |
 +----------+-------+------+---------+-----------+
 
 
@@ -393,11 +437,11 @@ Messages by category
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |266    |266      |266        |
+|convention |294    |241      |241        |
 +-----------+-------+---------+-----------+
-|refactor   |13     |13       |13         |
+|refactor   |17     |13       |13         |
 +-----------+-------+---------+-----------+
-|warning    |13     |13       |13         |
+|warning    |23     |18       |18         |
 +-----------+-------+---------+-----------+
 |error      |0      |0        |0          |
 +-----------+-------+---------+-----------+
@@ -410,33 +454,33 @@ Messages by category
 +---------------------+------+--------+---------+-----------+
 |module               |error |warning |refactor |convention |
 +=====================+======+========+=========+===========+
-|app.routers.skills   |0.00  |30.77   |0.00     |3.38       |
+|app.routers.users    |0.00  |39.13   |0.00     |8.84       |
 +---------------------+------+--------+---------+-----------+
-|app.crud             |0.00  |23.08   |0.00     |25.19      |
+|app.routers.skills   |0.00  |21.74   |0.00     |3.40       |
 +---------------------+------+--------+---------+-----------+
-|app.routers.projects |0.00  |15.38   |0.00     |9.02       |
+|app.crud             |0.00  |8.70    |0.00     |23.47      |
 +---------------------+------+--------+---------+-----------+
-|app.routers.users    |0.00  |15.38   |0.00     |8.65       |
+|app.routers.projects |0.00  |8.70    |0.00     |7.82       |
 +---------------------+------+--------+---------+-----------+
-|app.assign           |0.00  |7.69    |30.77    |26.69      |
+|app.auth             |0.00  |8.70    |0.00     |2.04       |
 +---------------------+------+--------+---------+-----------+
-|app.auth             |0.00  |7.69    |0.00     |1.50       |
+|app.assign           |0.00  |4.35    |41.18    |30.27      |
 +---------------------+------+--------+---------+-----------+
-|app.schemas          |0.00  |0.00    |38.46    |12.03      |
+|app.routers.tasks    |0.00  |4.35    |0.00     |7.14       |
 +---------------------+------+--------+---------+-----------+
-|app.models           |0.00  |0.00    |30.77    |2.63       |
+|app.routers.assign   |0.00  |4.35    |0.00     |1.36       |
 +---------------------+------+--------+---------+-----------+
-|app.routers.tasks    |0.00  |0.00    |0.00     |8.27       |
+|app.schemas          |0.00  |0.00    |35.29    |11.90      |
 +---------------------+------+--------+---------+-----------+
-|app.routers.assign   |0.00  |0.00    |0.00     |1.13       |
+|app.models           |0.00  |0.00    |23.53    |2.38       |
 +---------------------+------+--------+---------+-----------+
-|app.routers.__init__ |0.00  |0.00    |0.00     |0.38       |
+|app.routers.__init__ |0.00  |0.00    |0.00     |0.34       |
 +---------------------+------+--------+---------+-----------+
-|app.main             |0.00  |0.00    |0.00     |0.38       |
+|app.main             |0.00  |0.00    |0.00     |0.34       |
 +---------------------+------+--------+---------+-----------+
-|app.database         |0.00  |0.00    |0.00     |0.38       |
+|app.database         |0.00  |0.00    |0.00     |0.34       |
 +---------------------+------+--------+---------+-----------+
-|app                  |0.00  |0.00    |0.00     |0.38       |
+|app                  |0.00  |0.00    |0.00     |0.34       |
 +---------------------+------+--------+---------+-----------+
 
 
@@ -447,29 +491,33 @@ Messages
 +---------------------------+------------+
 |message id                 |occurrences |
 +===========================+============+
-|trailing-whitespace        |146         |
+|trailing-whitespace        |179         |
 +---------------------------+------------+
-|missing-function-docstring |48          |
+|missing-function-docstring |44          |
 +---------------------------+------------+
-|missing-class-docstring    |28          |
+|missing-class-docstring    |30          |
 +---------------------------+------------+
 |missing-final-newline      |14          |
 +---------------------------+------------+
 |line-too-long              |14          |
 +---------------------------+------------+
+|unused-argument            |13          |
++---------------------------+------------+
 |wrong-import-order         |10          |
 +---------------------------+------------+
-|too-few-public-methods     |9           |
+|too-few-public-methods     |10          |
 +---------------------------+------------+
-|unused-argument            |8           |
+|unused-import              |7           |
 +---------------------------+------------+
-|missing-module-docstring   |6           |
+|too-many-branches          |3           |
 +---------------------------+------------+
-|unused-import              |3           |
+|missing-module-docstring   |3           |
++---------------------------+------------+
+|too-many-nested-blocks     |2           |
 +---------------------------+------------+
 |too-many-locals            |2           |
 +---------------------------+------------+
-|too-many-branches          |2           |
+|self-assigning-variable    |1           |
 +---------------------------+------------+
 |raise-missing-from         |1           |
 +---------------------------+------------+
@@ -480,5 +528,5 @@ Messages
 
 
 ------------------------------------------------------------------
-Your code has been rated at 6.77/10 (previous run: 6.77/10, +0.00)
+Your code has been rated at 6.61/10 (previous run: 6.92/10, -0.31)
 
