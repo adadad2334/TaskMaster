@@ -119,4 +119,4 @@ dmypy.json
 *.db
 
 # Temporary files
-create_tables.py 
+create_tables.py taskmaster/
