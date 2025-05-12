@@ -1,17 +1,26 @@
-from fastapi import FastAPI, Depends
+"""
+Main application module.
+This module initializes the FastAPI application and includes all routers.
+"""
+
+import logging
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from . import models
-from .database import engine, get_db
 from .routers import users, projects, tasks, skills, assign
+from .database import engine, Base
+
+# Настройка логирования
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Создаем таблицы в БД при первом запуске
-models.Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="TaskMaster API",
-    description="API для управления задачами с оптимальным распределением нагрузки между исполнителями",
-    version="1.0.0",
+    description="API для системы управления задачами с оптимизацией назначений",
+    version="1.0.0"
 )
 
 # Добавляем CORS middleware для возможности использования API из веб-приложений
@@ -32,18 +41,17 @@ app.include_router(assign.router)
 
 @app.get("/")
 async def root():
-    return {
-        "message": "Welcome to TaskMaster API",
-        "docs": "/docs",
-        "redoc": "/redoc"
-    }
+    """Root endpoint returning API information."""
+    return {"message": "Welcome to Task Assignment API", "docs": "/docs", "redoc": "/redoc"}
 
 # Эндпоинт для проверки соединения с БД
-@app.get("/ping", tags=["healthcheck"])
-async def ping_db(db = Depends(get_db)):
+@app.get("/health")
+async def health_check():
+    """Health check endpoint."""
     try:
-        # Пытаемся выполнить простой запрос к БД
-        db.execute("SELECT 1")
-        return {"status": "ok", "message": "Database connection successful"}
+        # Проверка подключения к БД
+        Base.metadata.create_all(bind=engine)
+        return {"status": "healthy"}
     except Exception as e:
-        return {"status": "error", "message": str(e)}
+        logger.error("Health check failed: %s", str(e))
+        raise HTTPException(status_code=503, detail="Service unavailable") from e

@@ -1,9 +1,14 @@
+"""
+Projects router module.
+"""
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 
-from .. import crud, models, schemas, auth
+from .. import models, schemas, crud
 from ..database import get_db
+from ..auth import get_current_active_user
 
 router = APIRouter(
     prefix="/projects",
@@ -13,7 +18,7 @@ router = APIRouter(
 
 @router.post("/", response_model=schemas.Project)
 def create_project(project: schemas.ProjectCreate, db: Session = Depends(get_db),
-                  current_user: models.User = Depends(auth.get_current_active_user)):
+                  current_user: models.User = Depends(get_current_active_user)):
     db_project = crud.create_project(db=db, project=project)
     
     # Автоматически добавляем создателя проекта как участника
@@ -24,13 +29,13 @@ def create_project(project: schemas.ProjectCreate, db: Session = Depends(get_db)
 
 @router.get("/", response_model=List[schemas.Project])
 def read_projects(skip: int = 0, limit: int = 100, db: Session = Depends(get_db),
-                 current_user: models.User = Depends(auth.get_current_active_user)):
+                 current_user: models.User = Depends(get_current_active_user)):
     projects = crud.get_projects(db, skip=skip, limit=limit)
     return projects
 
 @router.get("/{project_id}", response_model=schemas.Project)
 def read_project(project_id: int, db: Session = Depends(get_db),
-                current_user: models.User = Depends(auth.get_current_active_user)):
+                current_user: models.User = Depends(get_current_active_user)):
     db_project = crud.get_project(db, project_id=project_id)
     if db_project is None:
         raise HTTPException(status_code=404, detail="Project not found")
@@ -38,7 +43,7 @@ def read_project(project_id: int, db: Session = Depends(get_db),
 
 @router.put("/{project_id}", response_model=schemas.Project)
 def update_project(project_id: int, project: schemas.ProjectUpdate, db: Session = Depends(get_db),
-                  current_user: models.User = Depends(auth.get_current_active_user)):
+                  current_user: models.User = Depends(get_current_active_user)):
     # Проверяем, что пользователь является участником проекта
     db_project = crud.get_project(db, project_id=project_id)
     if db_project is None:
@@ -52,7 +57,7 @@ def update_project(project_id: int, project: schemas.ProjectUpdate, db: Session 
 
 @router.delete("/{project_id}", response_model=bool)
 def delete_project(project_id: int, db: Session = Depends(get_db),
-                  current_user: models.User = Depends(auth.get_current_active_user)):
+                  current_user: models.User = Depends(get_current_active_user)):
     # Проверяем, что пользователь является участником проекта
     db_project = crud.get_project(db, project_id=project_id)
     if db_project is None:
@@ -66,7 +71,7 @@ def delete_project(project_id: int, db: Session = Depends(get_db),
 
 @router.post("/{project_id}/members/{user_id}", response_model=schemas.Project)
 def add_member_to_project(project_id: int, user_id: int, db: Session = Depends(get_db),
-                          current_user: models.User = Depends(auth.get_current_active_user)):
+                          current_user: models.User = Depends(get_current_active_user)):
     # Проверяем, что текущий пользователь является участником проекта
     db_project = crud.get_project(db, project_id=project_id)
     if db_project is None:
@@ -88,7 +93,7 @@ def add_member_to_project(project_id: int, user_id: int, db: Session = Depends(g
 
 @router.delete("/{project_id}/members/{user_id}", response_model=schemas.Project)
 def remove_member_from_project(project_id: int, user_id: int, db: Session = Depends(get_db),
-                               current_user: models.User = Depends(auth.get_current_active_user)):
+                               current_user: models.User = Depends(get_current_active_user)):
     # Проверяем, что текущий пользователь является участником проекта
     db_project = crud.get_project(db, project_id=project_id)
     if db_project is None:

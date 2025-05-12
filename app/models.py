@@ -1,3 +1,10 @@
+"""
+Модуль с определением моделей базы данных.
+
+Этот модуль содержит все модели SQLAlchemy, которые представляют
+таблицы в базе данных и их отношения.
+"""
+
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime, Enum, Float, Table
 from sqlalchemy.orm import relationship
 from datetime import datetime
@@ -32,18 +39,30 @@ task_skill = Table(
 )
 
 class TaskPriority(str, enum.Enum):
+    """
+    Перечисление для приоритетов задач.
+    """
     LOW = "low"
     MEDIUM = "medium"
     HIGH = "high"
     CRITICAL = "critical"
 
 class TaskStatus(str, enum.Enum):
+    """
+    Перечисление для статусов задач.
+    """
     TODO = "todo"
     IN_PROGRESS = "in_progress"
     REVIEW = "review"
     DONE = "done"
 
 class User(Base):
+    """
+    Модель пользователя системы.
+    
+    Представляет зарегистрированного пользователя с возможностью входа в систему,
+    участия в проектах и назначения задач.
+    """
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -61,6 +80,11 @@ class User(Base):
     skills = relationship("Skill", secondary=user_skill, back_populates="users")
 
 class Project(Base):
+    """
+    Модель проекта.
+    
+    Проект объединяет задачи и участников, которые работают над этими задачами.
+    """
     __tablename__ = "projects"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -73,6 +97,12 @@ class Project(Base):
     members = relationship("User", secondary=project_user, back_populates="projects")
 
 class Task(Base):
+    """
+    Модель задачи.
+    
+    Задача является основной единицей работы, имеет статус, приоритет,
+    требуемые навыки и может быть назначена на исполнителя.
+    """
     __tablename__ = "tasks"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -84,6 +114,7 @@ class Task(Base):
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     due_date = Column(DateTime, nullable=True)
     estimated_hours = Column(Float, default=1.0)  # Оценка трудозатрат в часах
+    completed_at = Column(DateTime, nullable=True)  # Дата и время завершения задачи
 
     # Внешние ключи
     project_id = Column(Integer, ForeignKey("projects.id"))
@@ -95,6 +126,12 @@ class Task(Base):
     required_skills = relationship("Skill", secondary=task_skill, back_populates="tasks")
 
 class Skill(Base):
+    """
+    Модель навыка.
+    
+    Навыки могут быть связаны с пользователями (с указанием уровня владения)
+    и задачами (с указанием требуемого уровня).
+    """
     __tablename__ = "skills"
 
     id = Column(Integer, primary_key=True, index=True)

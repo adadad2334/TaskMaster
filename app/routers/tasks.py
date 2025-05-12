@@ -1,9 +1,14 @@
+"""
+Tasks router module.
+"""
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
+from typing import List, Optional
 
-from .. import crud, models, schemas, auth
+from .. import models, schemas, crud
 from ..database import get_db
+from ..auth import get_current_active_user
 
 router = APIRouter(
     prefix="/tasks",
@@ -13,7 +18,7 @@ router = APIRouter(
 
 @router.post("/", response_model=schemas.Task)
 def create_task(task: schemas.TaskCreate, db: Session = Depends(get_db),
-               current_user: models.User = Depends(auth.get_current_active_user)):
+               current_user: models.User = Depends(get_current_active_user)):
     # Проверяем, что проект существует и пользователь имеет к нему доступ
     db_project = crud.get_project(db, project_id=task.project_id)
     if not db_project:
@@ -28,7 +33,7 @@ def create_task(task: schemas.TaskCreate, db: Session = Depends(get_db),
 @router.get("/", response_model=List[schemas.Task])
 def read_tasks(skip: int = 0, limit: int = 100, project_id: int = None, 
               db: Session = Depends(get_db),
-              current_user: models.User = Depends(auth.get_current_active_user)):
+              current_user: models.User = Depends(get_current_active_user)):
     # Если указан ID проекта, проверяем, что пользователь имеет к нему доступ
     if project_id:
         db_project = crud.get_project(db, project_id=project_id)
@@ -54,14 +59,14 @@ def read_tasks(skip: int = 0, limit: int = 100, project_id: int = None,
 
 @router.get("/my", response_model=List[schemas.Task])
 def read_my_tasks(skip: int = 0, limit: int = 100, db: Session = Depends(get_db),
-                 current_user: models.User = Depends(auth.get_current_active_user)):
+                 current_user: models.User = Depends(get_current_active_user)):
     # Получаем задачи, назначенные на текущего пользователя
     tasks = crud.get_user_tasks(db, user_id=current_user.id, skip=skip, limit=limit)
     return tasks
 
 @router.get("/{task_id}", response_model=schemas.Task)
 def read_task(task_id: int, db: Session = Depends(get_db),
-             current_user: models.User = Depends(auth.get_current_active_user)):
+             current_user: models.User = Depends(get_current_active_user)):
     db_task = crud.get_task(db, task_id=task_id)
     if not db_task:
         raise HTTPException(status_code=404, detail="Task not found")
@@ -75,7 +80,7 @@ def read_task(task_id: int, db: Session = Depends(get_db),
 
 @router.put("/{task_id}", response_model=schemas.Task)
 def update_task(task_id: int, task: schemas.TaskUpdate, db: Session = Depends(get_db),
-               current_user: models.User = Depends(auth.get_current_active_user)):
+               current_user: models.User = Depends(get_current_active_user)):
     # Проверяем, что задача существует
     db_task = crud.get_task(db, task_id=task_id)
     if not db_task:
@@ -91,7 +96,7 @@ def update_task(task_id: int, task: schemas.TaskUpdate, db: Session = Depends(ge
 
 @router.delete("/{task_id}", response_model=bool)
 def delete_task(task_id: int, db: Session = Depends(get_db),
-               current_user: models.User = Depends(auth.get_current_active_user)):
+               current_user: models.User = Depends(get_current_active_user)):
     # Проверяем, что задача существует
     db_task = crud.get_task(db, task_id=task_id)
     if not db_task:

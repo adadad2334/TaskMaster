@@ -1,55 +1,53 @@
+"""
+Router for task assignment optimization.
+"""
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from .. import crud, models, schemas, auth, assign
+from .. import schemas, crud
+from ..assign import assign_tasks
 from ..database import get_db
+from ..auth import get_current_active_user
 
 router = APIRouter(
     prefix="/assign",
     tags=["assign"],
-    responses={404: {"description": "Not found"}},
+    dependencies=[Depends(get_current_active_user)]
 )
 
+# Expose the assign_tasks function
+assign_tasks = assign_tasks
+
 @router.post("/tasks", response_model=schemas.AutoAssignmentResponse)
-def auto_assign_tasks(
-    request: schemas.AssignTasksRequest,
+def assign_project_tasks(
+    assignment_request: schemas.AssignmentRequest,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(auth.get_current_active_user)
+    current_user: schemas.User = Depends(get_current_active_user)
 ):
     """
-    Автоматически назначает неназначенные задачи в проекте на участников проекта
-    используя алгоритм оптимального распределения.
+    Автоматически назначает задачи в проекте оптимальным исполнителям.
     
-    Параметр optimize_for определяет стратегию оптимизации:
-    - "balanced" - сбалансированное распределение (по умолчанию)
-    - "workload" - приоритет равномерной загрузки
-    - "skills" - приоритет соответствия навыков
-    - "priority" - приоритет важности задач
+    - **project_id**: ID проекта
+    - **optimize_for**: Стратегия оптимизации (balanced, workload, skills, priority)
     """
-    # Проверяем, существует ли проект
-    db_project = crud.get_project(db, project_id=request.project_id)
-    if not db_project:
+    project_id = assignment_request.project_id
+    optimize_for = assignment_request.optimize_for
+    
+    project = crud.get_project(db, project_id)
+    if not project:
         raise HTTPException(status_code=404, detail="Project not found")
     
-    # Проверяем, является ли пользователь участником проекта
-    if current_user not in db_project.members:
-        raise HTTPException(status_code=403, detail="Not enough permissions")
-    
-    # Проверяем, что в проекте есть участники
-    if not db_project.members:
-        raise HTTPException(status_code=400, detail="Project has no members to assign tasks to")
-    
-    # Валидируем значение optimize_for
-    valid_strategies = ["balanced", "workload", "skills", "priority"]
-    if request.optimize_for not in valid_strategies:
+    # Проверяем, что пользователь является участником проекта
+    is_member = any(member.id == current_user.id for member in project.members)
+    if not is_member:
         raise HTTPException(
-            status_code=400, 
-            detail=f"Invalid optimization strategy. Must be one of: {', '.join(valid_strategies)}"
+            status_code=403,
+            detail="You must be a member of the project to assign tasks"
         )
     
-    # Вызываем функцию назначения задач
     try:
-        result = assign.assign_tasks(db, request.project_id, request.optimize_for)
+        result = assign_tasks(db, project_id, optimize_for)
         return result
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e)) 
+        raise HTTPException(status_code=500, detail=str(e)) from e 

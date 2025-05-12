@@ -134,4 +134,11 @@ class TaskAssignmentResult(BaseModel):
 
 class AutoAssignmentResponse(BaseModel):
     assignments: List[TaskAssignmentResult]
-    unassigned_tasks: List[int] = [] 
+    unassigned_tasks: List[int] = []
+
+class AssignmentRequest(BaseModel):
+    project_id: int
+    optimize_for: str = "balanced"
+    
+    class Config:
+        from_attributes = True 
